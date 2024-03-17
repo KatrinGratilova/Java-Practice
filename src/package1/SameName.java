@@ -1,7 +1,7 @@
-package SameName_package1;
+package package1;
 
 public class SameName {
-    public SameName(){
+    public void checkPackage(){
         System.out.println("Package 1");
     }
 }

@@ -6,10 +6,12 @@ public class Main {
         System.out.println(emp1);
 
         Car car1 = new Car("BMW", "e55");
-        System.out.println(car1.getBrand());
+        car1.start();
 
-        SameName_package1.SameName obj1 = new SameName_package1.SameName();
-        SameName_package2.SameName obj2 = new SameName_package2.SameName();
+        package1.SameName obj1 = new package1.SameName();
+        package2.SameName obj2 = new package2.SameName();
+        obj1.checkPackage();
+        obj2.checkPackage();
 
     }
 }
