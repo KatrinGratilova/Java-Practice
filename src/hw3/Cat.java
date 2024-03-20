@@ -8,13 +8,13 @@ public class Cat extends Animal{
     }
 
     @Override
-    void run(int distance) {
+    void run(double distance) {
         if (distance <= 200) super.run(distance);
-        else System.out.println(getName() + " is too tired to run.");
+        else System.out.println(getName() + " can't run that far.");
     }
 
     @Override
-    void swim(int distance) {
+    void swim(double distance) {
         System.out.println(getName() + " can't swim!");
     }
 

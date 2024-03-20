@@ -8,19 +8,19 @@ public class Animal {
         this.name = name;
         animalCounter++;
     }
-    void run(int distance){
-        System.out.println(name + " run " + distance + " m.");
+    void run(double distance){
+        System.out.println(name + " ran " + distance + " m.");
     }
 
-    void swim(int distance){
+    void swim(double distance){
         System.out.println(name + " swam " + distance + " m.");
-    }
-
-    public static int getAnimalCounter() {
-        return animalCounter;
     }
 
     public String getName() {
         return name;
+    }
+
+    public static int getAnimalCounter() {
+        return animalCounter;
     }
 }

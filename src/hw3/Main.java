@@ -5,32 +5,36 @@ public class Main {
 
         Animal animal1 = new Animal("Honey");
 
-        animal1.swim(120);
-        animal1.run(10);
+        animal1.swim(600);
+        animal1.run(100);
         System.out.println(" ");
 
-        Cat cat1 = new Cat("Gray");
-        Cat cat2 = new Cat("Tom");
-        Animal cat3 = new Cat("Anfice");  // upcasting
+        Cat catGray = new Cat("Gray");
+        Cat catTom = new Cat("Tom");
+        Animal catAnfice = new Cat("Anfice");  // upcasting
 
-        cat1.run(120);
-        cat1.swim(100);
-        cat2.run(220);
-        cat3.swim(100);
+        catGray.run(12.5);
+        catGray.swim(1);
+        catTom.run(230);
+        catAnfice.swim(100);
         System.out.println(" ");
 
-        Dog dog1 = new Dog("Bobik");
-        Animal dog2 = new Dog("Lord");  // upcasting
-        Dog dog3 = (Dog) dog2;  // down casting
+        Dog dogBobik = new Dog("Bobik");
+        Animal dogLord = new Dog("Lord");  // upcasting
 
-        dog1.run(500);
-        dog1.swim(12);
-        dog1.voice();
+        // example of right down casting
+        if(dogLord instanceof Dog){
+            Dog dog3 = (Dog) dogLord;
+            dog3.swim(4.5);
+            dog3.voice();
+        }
 
-        dog2.run(501);
-        //dog2.voice();
+        dogBobik.run(500);
+        dogBobik.swim(12);
+        dogBobik.voice();
 
-        dog3.voice();
+        dogLord.run(501.7);
+        //dogLord.voice();  error - we cannot call methods created in the class Dog
 
         System.out.println("\nDog count: " + Dog.getDogCounter());
         System.out.println("Cat count: " + Cat.getCatCounter());
