@@ -1,3 +1,5 @@
+package hw2;
+
 public class Car {
     private final String brand;
     private final String model;
