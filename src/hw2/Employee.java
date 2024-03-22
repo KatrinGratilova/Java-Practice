@@ -1,3 +1,5 @@
+package hw2;
+
 public class Employee {
     private String surname; // Прізвище
     private final String name; // Ім'я
@@ -66,7 +68,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "hw2.Employee{" +
                 "surname='" + surname + '\'' +
                 ", name='" + name + '\'' +
                 ", patronymic='" + patronymic + '\'' +

@@ -1,3 +1,4 @@
+package hw2;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,8 +9,8 @@ public class Main {
         Car car1 = new Car("BMW", "e55");
         car1.start();
 
-        package1.SameName obj1 = new package1.SameName();
-        package2.SameName obj2 = new package2.SameName();
+        hw2.package1.SameName obj1 = new hw2.package1.SameName();
+        hw2.package2.SameName obj2 = new hw2.package2.SameName();
         obj1.checkPackage();
         obj2.checkPackage();
 
