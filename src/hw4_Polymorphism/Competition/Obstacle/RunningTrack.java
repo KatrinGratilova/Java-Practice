@@ -1,7 +1,5 @@
 package hw4_Polymorphism.Competition.Obstacle;
 
-import hw4_Polymorphism.Competition.Pacticipants.Participant;
-
 public class RunningTrack extends Obstacle {
     private final int length;
 

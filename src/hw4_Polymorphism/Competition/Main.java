@@ -1,4 +1,5 @@
 package hw4_Polymorphism.Competition;
+
 import hw4_Polymorphism.Competition.Obstacle.Obstacle;
 import hw4_Polymorphism.Competition.Obstacle.RunningTrack;
 import hw4_Polymorphism.Competition.Obstacle.Wall;
