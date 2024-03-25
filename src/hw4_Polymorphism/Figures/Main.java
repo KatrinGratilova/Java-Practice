@@ -20,6 +20,6 @@ public class Main {
         for (Figure figure: figures){
             sum += figure.countArea();
         }
-        return sum;
+        return Math.round(sum);
     }
 }

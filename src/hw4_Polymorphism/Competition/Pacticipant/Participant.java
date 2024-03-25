@@ -1,4 +1,4 @@
-package hw4_Polymorphism.Competition.Pacticipants;
+package hw4_Polymorphism.Competition.Pacticipant;
 
 import hw4_Polymorphism.Competition.Obstacle.Obstacle;
 import hw4_Polymorphism.Competition.Obstacle.RunningTrack;

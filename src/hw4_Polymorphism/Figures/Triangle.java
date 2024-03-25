@@ -1,15 +1,19 @@
 package hw4_Polymorphism.Figures;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Triangle implements Figure{
     private final int sideA;
     private final int sideB;
     private final int sideC;
 
+    Logger LOGGER = Logger.getLogger(Triangle.class.getName());
     public Triangle(int sideA, int sideB, int sideC) {
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
-        if(!isTriangle()) System.out.println("This is not a triangle");
+
+        if(!isTriangle()) LOGGER.log(Level.INFO, "This is not a triangle");
     }
 
     private boolean isTriangle(){
@@ -18,9 +22,10 @@ public class Triangle implements Figure{
 
     @Override
     public double countArea() {
-        if(!isTriangle()) return 0;
+        //if(!isTriangle()) return 0;
         double halfPerimeter = (double) (sideA + sideB + sideC) / 2;
-        return Math.sqrt(halfPerimeter * (halfPerimeter - sideA) *
+        double area = Math.sqrt(halfPerimeter * (halfPerimeter - sideA) *
                 (halfPerimeter - sideB) * (halfPerimeter - sideC));
+        return area;
     }
 }

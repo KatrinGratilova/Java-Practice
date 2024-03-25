@@ -9,6 +9,7 @@ public class Circle implements Figure {
 
     @Override
     public double countArea() {
-        return 3.14 * Math.pow(radius, 2);
+        double area = Math.PI * Math.pow(radius, 2);
+        return area;
     }
 }

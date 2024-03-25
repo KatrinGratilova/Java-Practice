@@ -4,11 +4,12 @@ public class Square implements Figure{
     private final int side;
 
     public Square(int width){
-        this.width = width;
+        this.side = width;
     }
 
     @Override
     public double countArea() {
-        return Math.pow(width, 2);
+        double area = Math.pow(side, 2);
+        return area;
     }
 }

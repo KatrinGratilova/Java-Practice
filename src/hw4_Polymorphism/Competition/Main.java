@@ -3,10 +3,10 @@ package hw4_Polymorphism.Competition;
 import hw4_Polymorphism.Competition.Obstacle.Obstacle;
 import hw4_Polymorphism.Competition.Obstacle.RunningTrack;
 import hw4_Polymorphism.Competition.Obstacle.Wall;
-import hw4_Polymorphism.Competition.Pacticipants.Cat;
-import hw4_Polymorphism.Competition.Pacticipants.Human;
-import hw4_Polymorphism.Competition.Pacticipants.Participant;
-import hw4_Polymorphism.Competition.Pacticipants.Robot;
+import hw4_Polymorphism.Competition.Pacticipant.Cat;
+import hw4_Polymorphism.Competition.Pacticipant.Human;
+import hw4_Polymorphism.Competition.Pacticipant.Participant;
+import hw4_Polymorphism.Competition.Pacticipant.Robot;
 
 public class Main {
     public static void main(String[] args) {
