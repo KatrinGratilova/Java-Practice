@@ -22,7 +22,7 @@ public class Triangle implements Figure{
 
     @Override
     public double countArea() {
-        //if(!isTriangle()) return 0;
+        if(!isTriangle()) return 0;
         double halfPerimeter = (double) (sideA + sideB + sideC) / 2;
         double area = Math.sqrt(halfPerimeter * (halfPerimeter - sideA) *
                 (halfPerimeter - sideB) * (halfPerimeter - sideC));
