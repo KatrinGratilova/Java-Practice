@@ -1,4 +1,4 @@
-package hw4_Polymorphism.Competition.Pacticipants;
+package hw4_Polymorphism.Competition.Pacticipant;
 
 public class Cat extends Participant {
 
