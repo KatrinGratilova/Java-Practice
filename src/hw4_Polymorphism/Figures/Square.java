@@ -1,7 +1,7 @@
 package hw4_Polymorphism.Figures;
 
 public class Square implements Figure{
-    private final int width;
+    private final int side;
 
     public Square(int width){
         this.width = width;
