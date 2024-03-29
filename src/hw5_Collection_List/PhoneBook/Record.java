@@ -13,10 +13,6 @@ public class Record {
         return name;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
     @Override
     public String toString() {
         return "\t" + name + "  |  " + phoneNumber;

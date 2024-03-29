@@ -7,12 +7,12 @@ public class Main {
         PhoneBook odessaPhoneBook = new PhoneBook();
         odessaPhoneBook.add(new Record("Gratilova Katrin", "+380632546866"));
         odessaPhoneBook.add(new Record("Marilyn Manson", "+380982058711"));
-        odessaPhoneBook.add(new Record("Gratilova Katrin", "+38097368866"));
+        odessaPhoneBook.add(new Record("Gratilova Katrin", "+380973688366"));
         odessaPhoneBook.add(new Record("Madison Montgomery", "+38089652008"));
         odessaPhoneBook.add(new Record("Marilyn Manson", "+38089652008"));
         odessaPhoneBook.add(new Record("Evan Peters", "+38089652008"));
         odessaPhoneBook.add(new Record("Kody Fern", "+38089652008"));
-        odessaPhoneBook.add(new Record("Gratilova Katrin", "+38094820294"));
+        odessaPhoneBook.add(new Record("Gratilova Katrin", "+380948202934"));
 
         String searchingName = "Marilyn Manson";
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PhoneBook {
-    private List<Record> records;
+    private final List<Record> records;
 
     public PhoneBook() {
         records = new ArrayList<>();
@@ -16,7 +16,8 @@ public class PhoneBook {
 
     public Record find(String name){
         for(Record currentRecord: records){
-            if(currentRecord.getName().equals(name)) return currentRecord;
+            if(currentRecord.getName().equals(name))
+                return currentRecord;
         }
         return null;
     }
