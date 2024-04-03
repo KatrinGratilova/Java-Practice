@@ -2,25 +2,26 @@ package hw7_Map_Set.coffee_order;
 
 public class Main {
     public static void main(String[] args) {
-        CoffeeOrderBoard orders = new CoffeeOrderBoard();
-        orders.add(new Order("Catherine"));
-        orders.add(new Order("Alex L."));
-        orders.add(new Order("Marilyn Manson"));
-        orders.add(new Order("Jimmy Hendrix"));
-        orders.add(new Order("Lana Rey"));
-        orders.add(new Order("Tatiana"));
-        orders.add(new Order("Dimochka"));
-        orders.add(new Order("Vasiliy Sergeevich"));
+        CoffeeOrderBoard starbucksOrders = new CoffeeOrderBoard();
+        
+        starbucksOrders.add(new Order("Catherine"));
+        starbucksOrders.add(new Order("Alex L."));
+        starbucksOrders.add(new Order("Marilyn Manson"));
+        starbucksOrders.add(new Order("Jimmy Hendrix"));
+        starbucksOrders.add(new Order("Lana Rey"));
+        starbucksOrders.add(new Order("Tatiana"));
+        starbucksOrders.add(new Order("Dimochka"));
+        starbucksOrders.add(new Order("Vasiliy Sergeevich"));
 
-        orders.draw();
+        starbucksOrders.draw();
 
-        orders.deliver();
-        orders.deliver();
-        orders.deliver(4);
-        orders.deliver();
-        orders.deliver(4);
-        orders.deliver(7);
+        starbucksOrders.deliver();
+        starbucksOrders.deliver();
+        starbucksOrders.deliver(4);
+        starbucksOrders.deliver();
+        starbucksOrders.deliver(4);
+        starbucksOrders.deliver(7);
 
-        orders.draw();
+        starbucksOrders.draw();
     }
 }
