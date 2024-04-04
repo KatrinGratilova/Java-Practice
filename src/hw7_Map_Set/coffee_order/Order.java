@@ -1,15 +1,12 @@
 package hw7_Map_Set.coffee_order;
 
 public class Order {
-    private int orderNumber = 0;
+    private final int orderNumber;
     private final String customerName;
 
-    public Order(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public void setOrderNumber(int orderNumber) {
+    public Order(int orderNumber, String customerName) {
         this.orderNumber = orderNumber;
+        this.customerName = customerName;
     }
 
     public int getOrderNumber() {

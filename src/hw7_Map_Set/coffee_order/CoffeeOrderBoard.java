@@ -5,16 +5,16 @@ import java.util.LinkedList;
 
 public class CoffeeOrderBoard {
     final Deque<Order> orders;
-    private static int orderCounter = 0;
+    private int orderCounter = 0;
 
     public CoffeeOrderBoard() {
         orders = new LinkedList<>();
     }
 
-    public void add(Order order){
+    public void add(String customerName){
         orderCounter++;
-        order.setOrderNumber(orderCounter);
-        orders.offer(order);
+        Order arrivedOrder = new Order(orderCounter, customerName);
+        orders.offer(arrivedOrder);
     }
 
     public void deliver(){

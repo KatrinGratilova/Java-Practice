@@ -4,14 +4,14 @@ public class Main {
     public static void main(String[] args) {
         CoffeeOrderBoard starbucksOrders = new CoffeeOrderBoard();
         
-        starbucksOrders.add(new Order("Catherine"));
-        starbucksOrders.add(new Order("Alex L."));
-        starbucksOrders.add(new Order("Marilyn Manson"));
-        starbucksOrders.add(new Order("Jimmy Hendrix"));
-        starbucksOrders.add(new Order("Lana Rey"));
-        starbucksOrders.add(new Order("Tatiana"));
-        starbucksOrders.add(new Order("Dimochka"));
-        starbucksOrders.add(new Order("Vasiliy Sergeevich"));
+        starbucksOrders.add("Catherine");
+        starbucksOrders.add("Alex L.");
+        starbucksOrders.add("Marilyn Manson");
+        starbucksOrders.add("Jimmy Hendrix");
+        starbucksOrders.add("Lana Rey");
+        starbucksOrders.add("Tatiana");
+        starbucksOrders.add("Dimochka");
+        starbucksOrders.add("Vasiliy Sergeevich");
 
         starbucksOrders.draw();
 
