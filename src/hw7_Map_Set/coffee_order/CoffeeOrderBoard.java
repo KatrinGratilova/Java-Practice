@@ -4,17 +4,13 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 public class CoffeeOrderBoard {
-    final Deque<Order> orders;
-    private int orderCounter = 0;
-
-    public CoffeeOrderBoard() {
-        orders = new LinkedList<>();
-    }
+    Deque<Order> orders = new LinkedList<>();
+    private int orderCounter = 1;
 
     public void add(String customerName){
+        orders.offer(new Order(orderCounter, customerName));
+        System.out.println("The order №" + orderCounter + " on name \"" + customerName + "\" was added!");
         orderCounter++;
-        Order arrivedOrder = new Order(orderCounter, customerName);
-        orders.offer(arrivedOrder);
     }
 
     public void deliver(){
