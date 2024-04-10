@@ -2,7 +2,7 @@ package hw9_Stream;
 
 import java.time.LocalDate;
 
-public class Product implements Comparable<Product>{
+public class Product{
     private final int id;
     private final String type;
     private int price;
@@ -106,10 +106,5 @@ public class Product implements Comparable<Product>{
     public void printTypePriceDiscountDate() {
         System.out.println("\ttype='" + type + "', price=" + price + ", isDiscountApplicable="
                 + isDiscountApplicable + ", addDate=" + addDate);
-    }
-
-    @Override
-    public int compareTo(Product o) {
-        return o.addDate.compareTo(addDate);
     }
 }

@@ -10,7 +10,8 @@ public class Main {
                 Product.builder()
                         .id(1).type("Bottle").price(250).isDiscountApplicable(true)
                         .addDate(LocalDate.of(2024, 2, 23)).build(),
-                Product.builder().id(2).type("Book").price(112).isDiscountApplicable(true)
+                Product.builder()
+                        .id(2).type("Book").price(112).isDiscountApplicable(true)
                         .addDate(LocalDate.of(2023, 12, 13)).build(),
                 Product.builder()
                         .id(3).type("Book").price(748).isDiscountApplicable(false)
@@ -32,7 +33,7 @@ public class Main {
                         .addDate(LocalDate.of(2024, 11, 1)).build()));
 
 
-        System.out.println("Books that are more expensive than 250:");
+        System.out.println("Books that are more expensive than 250 USD:");
         findExpensiveBooks(products).forEach(Product::printTypePrice);
 
         System.out.println("\nDiscount applicable books with discount 10%:");
@@ -44,10 +45,10 @@ public class Main {
         System.out.println("\nThree last added products:");
         findThreeLastProducts(products).forEach(Product::printTypePriceDiscountDate);
 
-        System.out.print("\nThe general price of cheap books of 2024:");
+        System.out.print("\nThe general price of cheap books of 2024: ");
         System.out.println(calculateGeneralPrice(products));
 
-        System.out.println("\nGrouped products by type:");
+        System.out.println("\nGrouped products by their type:");
         groupByType(products)
                 .forEach((k, v) -> {
                     System.out.println("\"" + k + "\": ");
@@ -77,17 +78,17 @@ public class Main {
 
     public static List<Product> findThreeLastProducts(List<Product> products){
         return products.stream()
-                .sorted()
+                .sorted(Comparator.comparing(Product::getAddDate).reversed())
                 .limit(3)
                 .toList();
     }
 
     public static int calculateGeneralPrice(List<Product> products){
         return products.stream()
-                .filter(p -> p.getAddDate().getYear() == 2024 && p.getType().equals("Book") && p.getPrice() <= 75)
-                .map(Product::getPrice)
-                .reduce(Integer::sum)
-                .orElse(0);
+                .filter(p -> p.getAddDate().getYear() == 2024)
+                .filter(p -> p.getType().equals("Book") && p.getPrice() <= 75)
+                .mapToInt(Product::getPrice)
+                .sum();
     }
 
     public static Map<String, List<Product>> groupByType(List<Product> products){
