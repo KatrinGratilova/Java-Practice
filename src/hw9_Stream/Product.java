@@ -17,28 +17,8 @@ public class Product{
         this.addDate = addDate;
     }
 
-    public static ProductBuilder builder(){
-        return new ProductBuilder();
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public boolean isDiscountApplicable() {
-        return isDiscountApplicable;
-    }
-
-    public LocalDate getAddDate() {
-        return addDate;
+    public static ProductBuilder builder(String type, int price){
+        return new ProductBuilder(type, price);
     }
 
     static public class ProductBuilder{
@@ -48,6 +28,10 @@ public class Product{
         private boolean isDiscountApplicable;
         private LocalDate addDate;
 
+        public ProductBuilder(String type, int price) {
+            this.type = type;
+            this.price = price;
+        }
 
         public ProductBuilder id(int id){
             this.id = id;
@@ -75,24 +59,28 @@ public class Product{
         }
 
         public Product build(){
-            if (validateProduct()) return new Product(id, type, price, isDiscountApplicable, addDate);
-            System.out.println("Product object can't be built without type and price!");
-            return null;
-        }
-
-        private boolean validateProduct(){
-            return type != null && price != 0;
+            return new Product(id, type, price, isDiscountApplicable, addDate);
         }
     }
 
-    public String toString() {
-        return "\t{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", price=" + price +
-                ", isDiscountApplicable=" + isDiscountApplicable +
-                ", addDate=" + addDate +
-                '}';
+    public String getType() {
+        return type;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public boolean isDiscountApplicable() {
+        return isDiscountApplicable;
+    }
+
+    public LocalDate getAddDate() {
+        return addDate;
     }
 
     public void printTypePrice() {
@@ -106,5 +94,15 @@ public class Product{
     public void printTypePriceDiscountDate() {
         System.out.println("\ttype='" + type + "', price=" + price + ", isDiscountApplicable="
                 + isDiscountApplicable + ", addDate=" + addDate);
+    }
+
+    public String toString() {
+        return "\t{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", price=" + price +
+                ", isDiscountApplicable=" + isDiscountApplicable +
+                ", addDate=" + addDate +
+                '}';
     }
 }
