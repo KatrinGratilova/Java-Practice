@@ -8,7 +8,7 @@ public class TwoSum {
         System.out.println(Arrays.toString(twoSum1(new int[]{2,5,4,11}, 6)));
     }
 
-    // 2 ms
+    // 2 ms    On
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> indexesNums = new HashMap<>();
         int currNum;
@@ -21,7 +21,26 @@ public class TwoSum {
         return new int[]{};
     }
 
-    // 34 ms
+    //On
+    public static int[] twoSum2(int[] nums, int target) {
+        Arrays.sort(nums);
+        // 2 8 10 15 17 19 23 25     -> 29
+        int left = 0;
+        int right = nums.length - 1;
+
+        while(left < right) {
+            int sum = nums[left] + nums[right];
+            if (sum > target)
+                left++;
+            else if (sum < target)
+                right--;
+            else return new int[]{left, right};
+
+        }
+        return new int[]{};
+    }
+
+    // 34 ms     On^2
     public static int[] twoSum1(int[] nums, int target) {
         int[] twoNums = new int[2];
         for (int i = 0; i < nums.length - 1; i++) {

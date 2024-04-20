@@ -13,19 +13,19 @@ public class ContainsDuplicate {
 
     // 27 ms
     public static boolean containsDuplicateStream(int[] nums) {
-        return Arrays.compare(nums, Arrays.stream(nums).distinct().toArray()) != 0;
+        return (nums.length - Arrays.stream(nums).distinct().toArray().length) != 0;
     }
 
-    // 20 ms
+    // 20 ms   O log n
     public static boolean containsDuplicateArray(int[] nums) {
-        Arrays.sort(nums);
-        for (int i = 0; i < nums.length - 1; i++) {
+        Arrays.sort(nums);    //
+        for (int i = 0; i < nums.length - 1; i++) {     // On
             if (nums[i] == nums[i + 1]) return true;
         }
         return false;
     }
 
-    // 9 ms
+    // 9 ms    On
     public static boolean containsDuplicateSet(int[] nums) {
         Set<Integer> uniqueNums = new HashSet<>();
         for (Integer i : nums) {
