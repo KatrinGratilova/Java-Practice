@@ -15,8 +15,9 @@ public class ArrayValueCalculator {
         }
     }
 
-    static int doCalc(String[][] array) throws ArraySizeException, ArrayDataException {
-        for (String[] row : array) {
+    static int doCalc(String[][] numbers) throws ArraySizeException, ArrayDataException {
+        if (numbers.length != 4) throw new ArraySizeException("Розмір масиву відмінний від 4х4!");
+        for (String[] row : numbers) {
             if (row.length != 4)
                 throw new ArraySizeException("Розмір масиву відмінний від 4х4!");
         }
@@ -27,10 +28,10 @@ public class ArrayValueCalculator {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 try {
-                    sum += Integer.parseInt(array[i][j]);
+                    sum += Integer.parseInt(numbers[i][j]);
                 }
                 catch (NumberFormatException e){  // parseInt throws NumberFormatException
-                    throw new ArrayDataException("Невірне значення у комірці [" + i + "][" + j + "]", e);
+                    throw new ArrayDataException("Невірне значення у комірці [" + i + "][" + j + "]- ", e);
                 }
             }
         }
