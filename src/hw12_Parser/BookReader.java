@@ -3,46 +3,39 @@ package hw12_Parser;
 import java.io.*;
 import java.nio.file.Path;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class BookReader{
-    public static final Path DIRECTORY_PATH = Path.of("src/hw12_Parser");
+    private static final Path DIRECTORY_PATH = Path.of("src/hw12_Parser/books"); // path to root package
 
-    public static void getBookContent(String bookName){
+    // Method for reading the file and getting its content
+    public static String getBookContent(String bookName){
         Path path = Path.of( DIRECTORY_PATH + "/" + bookName + ".txt");
+        String bookContent = " ";
 
-        try(BufferedReader reader = new BufferedReader(
-                new FileReader(path.toFile()))){
+        try(BufferedReader reader = new BufferedReader(new FileReader(path.toFile()))){
             StringBuilder content = new StringBuilder();
             String line;
             while((line = reader.readLine()) != null)
                 content.append(line);
 
-            String bookContent = content.toString().toLowerCase();
-            splitBookToWords(bookContent, bookName);
+            bookContent = content.toString().toLowerCase();
         }
         catch (FileNotFoundException e){
             System.err.println("File does not exist!");
+            System.exit(1);
         }
         catch (IOException e) {
-            System.out.println("rbhdrtbh");
+            System.err.println("An I/O error occurred, it's impossible to read the file!");
+            System.exit(1);
         }
+        return bookContent;
     }
 
-    private static void splitBookToWords(String bookContent, String bookName){
+    // Method for splitting book content to words
+    public static List<String> splitBookToWords(String bookContent){
+        List<String> list = new ArrayList<>(Arrays.asList(bookContent.split("[^A-zА-я']")));
+        list.removeIf(a -> a.length() < 3);
 
-        Pattern pt = Pattern.compile("[A-zА-я]{3,}");
-        Matcher matcher = pt.matcher(bookContent);
-        List<String> list = new ArrayList<>();
-        while(matcher.find())
-            list.add(matcher.group());
-
-        Map<String, Integer> map = AnalyzeBook.findPopularWords(list);
-        Set<String> set = AnalyzeBook.countUniqueWords(list);
-        File file = SaveStatistics.createStatisticsFile(bookName);
-        SaveStatistics.writeStatistics(map, set, file);
+        return list;
     }
-
-
 }
