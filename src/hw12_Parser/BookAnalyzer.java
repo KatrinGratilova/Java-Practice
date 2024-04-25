@@ -1,6 +1,8 @@
 package hw12_Parser;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -17,7 +19,19 @@ public class BookAnalyzer {
 
     private static void analyzeBook(String bookName){
         // Methods for reading the book content and splitting the content to words
-        String bookContent = BookReader.getBookContent(bookName);
+        String bookContent = " ";
+        try {
+            bookContent = BookReader.getBookContent(bookName);
+        }
+        catch (FileNotFoundException e){
+            System.out.println("Sorry, there is no book with this title!");
+            System.exit(1);
+        }
+        catch (IOException e) {
+            System.err.println("An I/O error occurred, it's impossible to read the file!");
+            System.exit(1);
+        }
+
         List<String> allWords =  BookReader.splitBookToWords(bookContent);
 
         // Methods for getting the number each word occurs and overall amount of words (excluding repeating)
@@ -25,7 +39,7 @@ public class BookAnalyzer {
         Set<String> uniqueWords = WordAnalyzer.findUniqueWords(allWords);
 
         // Methods to white statistics in file and to read it from file
-        File statisticsFile = SaveStatistics.writeStatistics(bookName, wordCounts, uniqueWords);
-        SaveStatistics.readStatisticsFile(statisticsFile);
+        File statisticsFile = CreateStatistics.writeStatistics(bookName, wordCounts, uniqueWords);
+        CreateStatistics.readStatisticsFile(statisticsFile);
     }
 }

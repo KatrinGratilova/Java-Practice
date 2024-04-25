@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class SaveStatistics {
+public class CreateStatistics {
     private static final Path DIRECTORY_PATH = Path.of("src/hw12_Parser/statistics");
 
     // Method for creating statistics file and writing in it
