@@ -38,7 +38,7 @@ public class BookAnalyzer {
         Map<String, Integer> wordCounts = WordAnalyzer.findWordCounts(allWords);
         Set<String> uniqueWords = WordAnalyzer.findUniqueWords(allWords);
 
-        // Methods to white statistics in file and to read it from file
+        // Methods to write statistics in file and to read it from file
         File statisticsFile = CreateStatistics.writeStatistics(bookName, wordCounts, uniqueWords);
         CreateStatistics.readStatisticsFile(statisticsFile);
     }

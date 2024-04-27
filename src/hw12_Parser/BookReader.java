@@ -26,9 +26,9 @@ public class BookReader{
 
     // Method for splitting book content to words
     public static List<String> splitBookToWords(String bookContent){
-        List<String> list = new ArrayList<>(Arrays.asList(bookContent.split("[^A-zА-я']")));
-        list.removeIf(a -> a.length() < 3);
+        List<String> bookWords = new ArrayList<>(Arrays.asList(bookContent.split("[^A-zА-я']")));
+        bookWords.removeIf(word -> word.length() < 3);
 
-        return list;
+        return bookWords;
     }
 }
