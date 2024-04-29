@@ -16,7 +16,7 @@ public class CreateStatistics {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(staticticsFile))){
             map = map.entrySet().stream()
                     .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                    .limit(11)
+                    .limit(10)
                     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                             (oldValue, newValue) -> oldValue, HashMap::new));
 
